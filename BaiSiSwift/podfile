@@ -1,0 +1,21 @@
+platform :ios, '8.0'
+
+use_frameworks!
+target 'BaiSiSwift' do
+
+pod 'HandyJSON', '~> 4.2.0-beta1' 
+pod 'RxSwift'    
+pod 'RxCocoa'
+pod 'RxDataSources'
+pod 'Alamofire'
+pod 'SnapKit'
+pod 'pop'
+pod 'Gifu'
+pod 'MJRefresh'
+pod 'NSObject+Rx'
+pod 'SVProgressHUD'
+pod 'Kingfisher'
+pod 'DZNEmptyDataSet'
+pod 'Moya/RxSwift'
+pod 'TYPagerController'
+end

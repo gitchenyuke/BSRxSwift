@@ -69,6 +69,9 @@ extension ListDetailViewModel: BSViewModelType{
                         let values = self?.vmDatas.value ?? []
                         self?.vmDatas.accept(values + datas)
                     }else{
+                        
+                        self?.page = "2"
+                        self?.json = String.init(format: "20-20.json", self?.jsonNun ?? 0)
                         self?.vmDatas.accept(data.normal?.list ?? [])
                     }
                     

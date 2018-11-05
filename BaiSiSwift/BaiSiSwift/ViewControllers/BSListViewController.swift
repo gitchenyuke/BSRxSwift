@@ -15,6 +15,8 @@ import RxDataSources
 
 class BSListViewController: BSBaseTableViewController {
     
+    var type: String!
+    
     /// 单区样式
     var dataSource : RxTableViewSectionedReloadDataSource<JHListEntitySection>!
     
@@ -27,11 +29,11 @@ class BSListViewController: BSBaseTableViewController {
         
         initUI()
         bindModel()
-        
-        
     }
     
     func initUI() {
+        
+        print("type\(type)")
         
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "ListTableViewCell")
         
@@ -41,13 +43,13 @@ class BSListViewController: BSBaseTableViewController {
             make.top.left.bottom.right.equalTo(view).offset(0)
         }
         
-        tableView.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
-            self.viewModel.json = "0-20.json"
-            self.viewModel.reload(type:"图片", json: self.viewModel.json)
+        tableView.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+            self?.viewModel.json = "0-20.json"
+            self?.viewModel.reload(type:self?.type ?? "", json: self?.viewModel.json ?? "")
         })
         
-        tableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: {
-            self.viewModel.reload(type:"图片" ,json: self.viewModel.json)
+        tableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: { [weak self] in
+            self?.viewModel.reload(type:self?.type ?? "" ,json: self?.viewModel.json ?? "")
         })
         
         tableView.mj_header.beginRefreshing()

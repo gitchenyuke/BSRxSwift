@@ -67,7 +67,7 @@ class ListHeaderSctionView: UIView {
         self.addSubview(columnPL)
         ivCover.addSubview(gifLogo)
         
-        ivIcon.frame = CGRect(x: 15, y: 15, width: 40, height: 40)
+        ivIcon.frame  = CGRect(x: 15, y: 15, width: 40, height: 40)
         labName.frame = CGRect(x: ivIcon.frame.maxX + 5, y: ivIcon.frame.minY, width: 200, height: 16)
         labTime.frame = CGRect(x: labName.frame.minX, y: labName.frame.maxY + 5, width: 200, height: 16)
         gifLogo.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
@@ -110,7 +110,7 @@ class ListHeaderSctionView: UIView {
             }
         }
         
-        ivIcon.kf.setImage(with: ImageResource(downloadURL: URL.init(string: imageStr)!), placeholder: UIImage.init(named: DefaultGraph), options: nil, progressBlock: nil, completionHandler: nil)
+        ivIcon.kf.setImage(with: ImageResource(downloadURL: URL.init(string: imageStr)!), placeholder: UIImage.init(named: DefaultGraph))
         
         let textHight = String.getNormalStrH(str: data.text ?? "", strFont: FONT_BIG, w: kScreenWidth-30)
         labContent.frame = CGRect(x: 15, y: ivIcon.frame.maxY + 15, width: kScreenWidth - 30, height: textHight)

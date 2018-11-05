@@ -38,8 +38,9 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         headerView.reload(data: headerEntity)
         headerView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: ListDetailHeaderView.getHightData(data: headerEntity))
         
-        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(BSCommentTableViewCell.self, forCellReuseIdentifier: "BSCommentTableViewCell")
         self.tableView.tableHeaderView = headerView
+        self.tableView.tableFooterView = UIView.init()
         view.addSubview(self.tableView)
         
         tableView.snp.makeConstraints { (make) in
@@ -55,9 +56,9 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         dataSource = RxTableViewSectionedReloadDataSource<DetailCommentSection>(
         
             configureCell: { (ds, tableView, index, model) -> UITableViewCell in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")
-                cell?.textLabel?.text = model.user?.username
-                return cell!
+                let cell = tableView.dequeueReusableCell(withIdentifier: "BSCommentTableViewCell") as! BSCommentTableViewCell
+                cell.reloadData(model)
+                return cell
         })
         
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
@@ -89,6 +90,10 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
 extension ListDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        
+        let items = dataSource[indexPath.section].items
+        let model = items[indexPath.row]
+        
+        return BSCommentTableViewCell.getCellHightData(model)
     }
 }

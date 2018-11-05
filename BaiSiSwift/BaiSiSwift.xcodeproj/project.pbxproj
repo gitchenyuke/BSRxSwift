@@ -33,6 +33,7 @@
 		7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */; };
 		7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */; };
 		7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */; };
+		7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */; };
 		7FF71DB1217D7AD60074E6FF /* OutputListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */; };
 		7FF71DB3217D7B000074E6FF /* BSViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB2217D7B000074E6FF /* BSViewModelType.swift */; };
 		7FF71DB5217D7B8E0074E6FF /* OutputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB4217D7B8E0074E6FF /* OutputViewModel.swift */; };
@@ -119,6 +120,7 @@
 		7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailHeaderView.swift; sourceTree = "<group>"; };
 		7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommunityView.swift; sourceTree = "<group>"; };
+		7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCommentTableViewCell.swift; sourceTree = "<group>"; };
 		7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputListViewController.swift; sourceTree = "<group>"; };
 		7FF71DB2217D7B000074E6FF /* BSViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSViewModelType.swift; sourceTree = "<group>"; };
 		7FF71DB4217D7B8E0074E6FF /* OutputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewModel.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				7FF941AB217EC5EC00978181 /* BSComposeTypeButton.swift */,
 				7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */,
 				7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */,
+				7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				7F035DCB2174AF86004D7D22 /* NewestViewController.swift in Sources */,
 				7F035DBA2174A6FD004D7D22 /* UIColor+BSExtension.swift in Sources */,
 				7FF71DB3217D7B000074E6FF /* BSViewModelType.swift in Sources */,
+				7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */,
 				7F035DCF2174AFAA004D7D22 /* MeViewController.swift in Sources */,
 				7FF85BE92175F8060028CD80 /* ListTableViewCell.swift in Sources */,
 				7FF9C80921789AB0003765FF /* ListColumnView.swift in Sources */,

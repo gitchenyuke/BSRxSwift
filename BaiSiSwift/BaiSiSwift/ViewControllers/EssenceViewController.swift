@@ -121,7 +121,10 @@ extension EssenceViewController:TYPagerControllerDelegate,TYPagerControllerDataS
         if index == 1 {
             return OutputListViewController()
         }
-        return BSListViewController()
+        let ctl = BSListViewController()
+        let entity = titles[index]
+        ctl.type = entity.name
+        return ctl
     }
     
     func pagerController(_ pagerController: TYPagerController, transitionFrom fromIndex: Int, to toIndex: Int, animated: Bool) {

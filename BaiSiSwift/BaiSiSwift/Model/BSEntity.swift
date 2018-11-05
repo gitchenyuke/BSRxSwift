@@ -127,6 +127,7 @@ struct CommentEntity:HandyJSON{
     var data_id: String?  // id
     var content: String?  // 评论内容
     var like_count: String?  // 点赞数
+    var hate_count: String? // 踩
     var type: String?  //类型: text image video gif
     var user: CommentUserEntity?  // 用户信息
     var image: CommentImageEntity?

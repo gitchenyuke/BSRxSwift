@@ -35,10 +35,10 @@ class ListCommunityView: UIView {
         btnPush.setTitleColor(UIColor.white, for: .normal)
         btnPush.setTitle("进入", for: .normal)
         ViewRadius(view: btnPush, Radius: 13)
-        btnPush.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_NAV_BAR)
+        btnPush.backgroundColor = UIColor.hexadecimalColor(COLOR_NAV_BAR)
         
-        topLine.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM)
-        bottomLine.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM)
+        topLine.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM)
+        bottomLine.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM)
         
         self.addSubview(topLine)
         self.addSubview(bottomLine)

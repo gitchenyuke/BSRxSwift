@@ -14,6 +14,8 @@ import Kingfisher
 import RxDataSources
 
 class RecommendListViewController: UIViewController {
+    /// 数据类型
+    var type: String!
     
     let viewModel = RecommendListViewModel.init()
     /// 多组分区样式
@@ -51,13 +53,13 @@ class RecommendListViewController: UIViewController {
             make.top.left.bottom.right.equalTo(view).offset(0)
         }
         
-        tableView.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: {
-            self.viewModel.json = "0-20.json"
-            self.viewModel.reload(json: self.viewModel.json)
+        tableView.mj_header =  MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+            self?.viewModel.json = "0-20.json"
+            self?.viewModel.reload(type:self?.type ?? "", json: self?.viewModel.json ?? "")
         })
         
-        tableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: {
-            self.viewModel.reload(json: self.viewModel.json)
+        tableView.mj_footer = MJRefreshBackNormalFooter.init(refreshingBlock: { [weak self] in
+            self?.viewModel.reload(type:self?.type ?? "" ,json: self?.viewModel.json ?? "")
         })
         
         tableView.mj_header.beginRefreshing()
@@ -89,7 +91,7 @@ class RecommendListViewController: UIViewController {
    
 }
 
-extension RecommendListViewController : UITableViewDelegate {
+extension RecommendListViewController : UITableViewDelegate ,HeaderSectionDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let items = dataSource[indexPath.section].items
@@ -100,6 +102,7 @@ extension RecommendListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = ListHeaderSctionView.init(frame: .zero)
         let secion = dataSource[section]
+        headerView.delegate = self
         headerView.reloadData(data: secion.header!)
         return headerView
     }
@@ -129,5 +132,10 @@ extension RecommendListViewController : UITableViewDelegate {
         if count == 0 {return 0.5}
         return 18.5
     }
-    
+    // MARK: - HeaderSectionDelegate 代理方法
+    func didSelectedHeader(data: JHListEntity) {
+        let ctl = ListDetailViewController()
+        ctl.headerEntity = data
+        self.navigationController?.pushViewController(ctl, animated: true)
+    }
 }

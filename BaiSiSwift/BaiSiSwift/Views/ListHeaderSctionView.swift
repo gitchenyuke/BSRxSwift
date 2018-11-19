@@ -9,9 +9,19 @@
 import UIKit
 import Kingfisher
 import Gifu
+import RxGesture
+
+protocol HeaderSectionDelegate:class {
+    func didSelectedHeader(data:JHListEntity)
+}
 
 class ListHeaderSctionView: UIView {
 
+    // 代理
+    weak var delegate: HeaderSectionDelegate?
+    
+    var entity:JHListEntity!
+    
     var ivIcon: UIImageView!
     var labName: UILabel!
     var labTime: UILabel!
@@ -25,6 +35,15 @@ class ListHeaderSctionView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        /// tap
+        self.isUserInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapClick))
+        self.addGestureRecognizer(tap)
+        
+//        self.rx.tapGesture().when(.recognized).subscribe(onNext: {  _ in
+//            self.delegate?.didSelectedHeader(data: self.entity)
+//        }).disposed(by: rx.disposeBag)
         
         ivIcon = UIImageView.init()
         labName = UILabel.text(textColor: COLOR_BLUE, textFont: FONT_MIDDLE)
@@ -48,7 +67,7 @@ class ListHeaderSctionView: UIView {
         columnCai.ivImage.image = UIImage.init(named: "iv_cai")
         columnPL.ivImage.image = UIImage.init(named: "iv_comment")
         
-        ivCover.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM_TWO)
+        ivCover.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM_TWO)
         labContent.numberOfLines = 0
         
         ViewRadius(view: ivIcon, Radius: 20)
@@ -72,9 +91,15 @@ class ListHeaderSctionView: UIView {
         labTime.frame = CGRect(x: labName.frame.minX, y: labName.frame.maxY + 5, width: 200, height: 16)
         gifLogo.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
     }
-
+    
+  
+    @objc func tapClick() {
+        delegate?.didSelectedHeader(data: entity)
+    }
     
     func reloadData(data:JHListEntity) -> Void {
+        
+        entity = data
         
         let imageStr:String = data.u?.header?.first ?? ""
         var coverstr:String = ""

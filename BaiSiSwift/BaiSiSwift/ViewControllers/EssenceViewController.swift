@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import TYPagerController
 
-class EssenceViewController: BSBaseViewController,ShadowNavImageLine {
+class EssenceViewController: BSBaseViewController {
     
     var titles:[EssenceSubmenusEntity]!
     
@@ -22,10 +22,10 @@ class EssenceViewController: BSBaseViewController,ShadowNavImageLine {
         tabBar.delegate = self
         tabBar.dataSource = self
         tabBar.layout.barStyle = .progressElasticView;
-        tabBar.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_NAV_BAR)
+        tabBar.backgroundColor = UIColor.hexadecimalColor(COLOR_NAV_BAR)
         tabBar.layout.normalTextFont = UIFont.systemFont(ofSize: FONT_MIDDLE);
         tabBar.layout.selectedTextFont = UIFont.systemFont(ofSize: FONT_MIDDLE);
-        tabBar.layout.normalTextColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BLACK_FOURTH)
+        tabBar.layout.normalTextColor = UIColor.hexadecimalColor(COLOR_BLACK_FOURTH)
         tabBar.layout.selectedTextColor = UIColor.white
         tabBar.layout.progressColor = UIColor.white
         tabBar.layout.cellEdging = 10;
@@ -44,8 +44,9 @@ class EssenceViewController: BSBaseViewController,ShadowNavImageLine {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigation.item.title = "百思不得姐"
 
-        hiddenLine()
         setUpNavigation()
         initUI()
         bindModel()
@@ -60,7 +61,7 @@ class EssenceViewController: BSBaseViewController,ShadowNavImageLine {
         
         self.tabBar.snp.makeConstraints { (make) in
             make.left.right.equalTo(view)
-            make.top.equalTo(0)
+            make.top.equalTo(SafeAreaTopHeight)
             make.height.equalTo(45)
         }
         
@@ -115,13 +116,7 @@ extension EssenceViewController:TYPagerControllerDelegate,TYPagerControllerDataS
     
     // MARK: TYPagerControllerDelegate
     func pagerController(_ pagerController: TYPagerController, controllerFor index: Int, prefetching: Bool) -> UIViewController {
-        if index == 0 {
-           return RecommendListViewController()
-        }
-        if index == 1 {
-            return OutputListViewController()
-        }
-        let ctl = BSListViewController()
+        let ctl = RecommendListViewController()
         let entity = titles[index]
         ctl.type = entity.name
         return ctl

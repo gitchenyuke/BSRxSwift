@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor{
-    class func hexadecimalColor(hexadecimal:String)->UIColor{
+    class func hexadecimalColor(_ hexadecimal:String)->UIColor{
         var cstr = hexadecimal.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
         if(cstr.length < 6){
             return UIColor.clear;

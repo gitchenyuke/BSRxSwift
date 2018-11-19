@@ -24,11 +24,8 @@ extension ListDetailViewModel: BSViewModelType{
     
     /// 重新定义输入输出
     typealias Input = ListDetailInput
-    
     typealias Output = ListDetailOuput
-    
     struct ListDetailInput {}
-    
     
     /// 刷新协议
     struct ListDetailOuput: OutputRefreshProtocal {
@@ -41,6 +38,7 @@ extension ListDetailViewModel: BSViewModelType{
         
         init(sections:Driver<[DetailCommentSection]>) {
             self.sections = sections
+            /// 初始化
             refreshStatus = BehaviorRelay<BSRefreshStatus>.init(value: .none)
         }
         

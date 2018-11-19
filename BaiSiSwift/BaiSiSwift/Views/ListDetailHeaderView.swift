@@ -29,7 +29,7 @@ class ListDetailHeaderView: UIView {
         labContext = UILabel.text(textColor: COLOR_BLACK_TWO, textFont: FONT_BIG)
         labTime = UILabel.text(textColor: COLOR_BLACK_FOURTH, textFont: FONT_SMALL)
         
-        ivCover.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM)
+        ivCover.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM)
         labContext.numberOfLines = 0
         
         communityView = ListCommunityView.init(frame: .zero)

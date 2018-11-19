@@ -35,7 +35,7 @@ class BSCommentTableViewCell: BSBaseTableViewCell {
         
         ViewRadius(view: labtotalLike, Radius: 3)
         labContext.numberOfLines = 0
-        labtotalLike.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_ORANGE)
+        labtotalLike.backgroundColor = UIColor.hexadecimalColor(COLOR_ORANGE)
         labtotalLike.textAlignment = .center
         like.ivImage.image = UIImage.init(named: "iv_like")
         dislike.ivImage.image = UIImage.init(named: "iv_cai")

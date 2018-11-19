@@ -32,6 +32,7 @@
 		7F80FE042179DC72000A5E50 /* ListFooterSctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FE032179DC72000A5E50 /* ListFooterSctionView.swift */; };
 		7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */; };
 		7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */; };
+		7FB6BC772191A56D0085E613 /* BSNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */; };
 		7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */; };
 		7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */; };
 		7FF71DB1217D7AD60074E6FF /* OutputListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */; };
@@ -119,6 +120,7 @@
 		7F80FE032179DC72000A5E50 /* ListFooterSctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFooterSctionView.swift; sourceTree = "<group>"; };
 		7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailHeaderView.swift; sourceTree = "<group>"; };
+		7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSNavigationViewController.swift; sourceTree = "<group>"; };
 		7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommunityView.swift; sourceTree = "<group>"; };
 		7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCommentTableViewCell.swift; sourceTree = "<group>"; };
 		7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputListViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				7FF71DBC217DD6DF0074E6FF /* BSBaseTableViewController.swift */,
 				7F035DC62174ABD6004D7D22 /* BSBaseTableViewCell.swift */,
 				7F035DD02174AFE3004D7D22 /* BSTabBarController.swift */,
+				7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -518,8 +521,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaiSiSwift/Pods-BaiSiSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaChainKit/CocoaChainKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -529,6 +534,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -540,8 +546,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaChainKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -551,6 +559,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -569,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB6BC772191A56D0085E613 /* BSNavigationViewController.swift in Sources */,
 				7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */,
 				7FF85BDF2175CC290028CD80 /* BSAPI.swift in Sources */,
 				7F035DC52174ABB5004D7D22 /* BSBaseViewController.swift in Sources */,

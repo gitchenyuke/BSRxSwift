@@ -46,7 +46,7 @@ class ListTableViewCell: BSBaseTableViewCell {
         columnPL.ivImage.image = UIImage.init(named: "iv_comment")
         
 
-        ivCover.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM_TWO)
+        ivCover.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM_TWO)
         labContent.numberOfLines = 0
         
         ViewRadius(view: ivIcon, Radius: 20)

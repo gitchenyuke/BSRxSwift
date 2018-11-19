@@ -16,7 +16,7 @@ class RecommendListCell: BSBaseTableViewCell {
     override func setupUI() {
         
         bgView = UIView.init()
-        bgView.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM)
+        bgView.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM)
         
         labContent = UILabel.text(textColor: COLOR_BLACK_THREE, textFont: FONT_MIDDLE)
         labContent.numberOfLines = 0
@@ -42,7 +42,7 @@ class RecommendListCell: BSBaseTableViewCell {
     
     func contentAttributedText(data:Top_commentsEntity) -> NSMutableAttributedString {
         let content = String.init(format: "%@: %@", data.u?.name ?? "" , data.content ?? "")
-        let attributedText = NSMutableAttributedString.attributenStringColor(text: content, selectedText: data.u?.name ?? "", allColor: UIColor.hexadecimalColor(hexadecimal: COLOR_BLACK_THREE), selectedColor: UIColor.hexadecimalColor(hexadecimal: COLOR_BLUE), fone: FONT_MIDDLE)
+        let attributedText = NSMutableAttributedString.attributenStringColor(text: content, selectedText: data.u?.name ?? "", allColor: UIColor.hexadecimalColor(COLOR_BLACK_THREE), selectedColor: UIColor.hexadecimalColor(COLOR_BLUE), fone: FONT_MIDDLE)
         return attributedText
     }
     

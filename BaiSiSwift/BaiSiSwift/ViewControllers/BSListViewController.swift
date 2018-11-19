@@ -33,8 +33,6 @@ class BSListViewController: BSBaseTableViewController {
     
     func initUI() {
         
-        print("type\(type)")
-        
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "ListTableViewCell")
         
         view.addSubview(tableView)

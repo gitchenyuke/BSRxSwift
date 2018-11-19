@@ -14,7 +14,7 @@ extension UILabel{
     
     // 颜色字符串
     class func text(textColor:String,textFont:CGFloat) -> UILabel{
-        let color = UIColor.hexadecimalColor(hexadecimal: textColor)
+        let color = UIColor.hexadecimalColor(textColor)
         let font = UIFont.systemFont(ofSize: textFont)
         let lab = UILabel.init()
         lab.textColor = color

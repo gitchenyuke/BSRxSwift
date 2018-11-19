@@ -39,8 +39,8 @@ let PlaceholderImage1                        = "defaultGraph_1"
 let PlaceholderImage2                        = "defaultGraph_2"
 let PlaceholderImage3                        = "defaultGraph_3"
 
-let SafeAreaTopHeight:CGFloat                = kScreenHeight == 812.0 ? 88 : 64
-let SafeAreaBottomHeight:CGFloat             = kScreenHeight == 812.0 ? 83 : 49
+let SafeAreaTopHeight:CGFloat                = kScreenHeight >= 812.0 ? 88 : 64
+let SafeAreaBottomHeight:CGFloat             = kScreenHeight >= 812.0 ? 83 : 49
 
 let SdcylesScrollViewHeight:CGFloat          = 200
 let FindFristHeaderCollectionMager:CGFloat   = kScreenWidth/9

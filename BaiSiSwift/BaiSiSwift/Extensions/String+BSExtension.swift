@@ -53,7 +53,7 @@ extension String {
         case "图片":
             return .jhimage(json: json)
         case "笑话":
-            return .jhremen(json: json)
+            return .jhjoke(json: json)
         case "排行":
             return .jhremen(json: json)
         default:

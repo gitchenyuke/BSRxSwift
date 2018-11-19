@@ -1,9 +1,9 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 use_frameworks!
 target 'BaiSiSwift' do
 
-pod 'HandyJSON', '~> 4.2.0-beta1' 
+pod 'HandyJSON' 
 pod 'RxSwift'    
 pod 'RxCocoa'
 pod 'RxDataSources'
@@ -11,7 +11,10 @@ pod 'Alamofire'
 pod 'SnapKit'
 pod 'pop'
 pod 'Gifu'
+pod 'EachNavigationBar'
+pod 'CocoaChainKit'
 pod 'MJRefresh'
+pod 'RxGesture', '~> 2.0.1'
 pod 'NSObject+Rx'
 pod 'SVProgressHUD'
 pod 'Kingfisher'

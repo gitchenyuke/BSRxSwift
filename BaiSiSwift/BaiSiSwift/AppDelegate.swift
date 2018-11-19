@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import EachNavigationBar
+import CocoaChainKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,21 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
-        self.window?.makeKeyAndVisible()
+        /// 配置自定义nav 
+        UIViewController.navigation.swizzle()
+        window = UIWindow.init(frame: UIScreen.main.bounds).chain.backgroundColor(UIColor.white).build
+        window?.rootViewController = BSTabBarController.init()
+        window?.makeKeyAndVisible()
         
-        let root = BSTabBarController.init()
-        self.window?.rootViewController = root
-        
-        /// 设置nav背景颜色
-        UINavigationBar.appearance().barTintColor = UIColor.hexadecimalColor(hexadecimal: COLOR_NAV_BAR)
-        
-        /// 关闭导航栏半透明效果
-        UINavigationBar.appearance().isTranslucent = false
-        
-        /// 设置nav字体大小和颜色
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.white]
+//        /// 设置nav背景颜色
+//        UINavigationBar.appearance().barTintColor = UIColor.hexadecimalColor(hexadecimal: COLOR_NAV_BAR)
+//
+//        /// 关闭导航栏半透明效果
+//        UINavigationBar.appearance().isTranslucent = false
+//        
+//        /// 设置nav字体大小和颜色
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.white]
 
         // TabBar设置字体颜色
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TabBar设置字体的大小
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12.0)], for: .normal)
         
-        /// 适配tableView ios11 上拉加载时会有跳动Bug
+        /// 解决iOS11，仅实现heightForHeaderInSection，没有实现viewForHeaderInSection方法时,section间距大的问题
         UITableView.appearance().estimatedRowHeight = 0
         UITableView.appearance().estimatedSectionFooterHeight = 0
         UITableView.appearance().estimatedSectionHeaderHeight = 0

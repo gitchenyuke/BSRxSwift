@@ -20,8 +20,8 @@ class ListFooterSctionView: UIView {
         bgView = UIView.init()
         line = UIImageView.init()
         
-        bgView.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_BOTTOM)
-        line.backgroundColor = UIColor.hexadecimalColor(hexadecimal: COLOR_LINE)
+        bgView.backgroundColor = UIColor.hexadecimalColor(COLOR_BOTTOM)
+        line.backgroundColor = UIColor.hexadecimalColor(COLOR_LINE)
         
         self.addSubview(bgView)
         self.addSubview(line)

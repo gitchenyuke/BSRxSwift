@@ -23,10 +23,12 @@ class RecommendListViewModel: NSObject {
         super.init()
     }
     
-    func reload(json:String) {
+    func reload(type:String , json:String) {
+        
+        let api = String.jhRequest(type: type,json: json)
         
         bsLoadingProvider
-            .rx.request(.jhrecommend(json: json))
+            .rx.request(api)
             .asObservable().mapModel(JHRecommendListEntity.self)
             .showErrorToast()
             .subscribe(onNext: { [weak self] (model) in

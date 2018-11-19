@@ -18,6 +18,7 @@ enum APIManager {
     case jhimage(json:String) /// 精华图片专区列表
     case jhvideo(json:String) /// 精华视频专区列表
     case jhremen(json:String) /// 精华排行专区列表
+    case jhjoke(json:String) /// 精华笑话专区列表
     case detailCommentList(id:String,page:String , json:String) /// 详情评论列表
 }
 
@@ -41,6 +42,7 @@ extension APIManager: TargetType {
         case .jhimage(let json): return "topic/list/jingxuan/10/bs0315-iphone-4.5.9/\(json)"
         case .jhvideo(let json): return "topic/list/jingxuan/41/bs0315-iphone-4.5.9/\(json)"
         case .jhremen(let json): return "topic/list/remen/1/bs0315-iphone-4.5.9/\(json)"
+        case .jhjoke(let json): return "topic/tag-topic/63674/hot/bs0315-iphone-4.5.9/\(json)"
         case .jhrecommend(let json): return "topic/list/jingxuan/1/bs0315-iphone-4.5.9/\(json)"
         case .detailCommentList(let id ,let page , let json): return "topic/comment_list/\(id)/\(page)/bs0315-iphone-4.5.9/\(json)"
         }

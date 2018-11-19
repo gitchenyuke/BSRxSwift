@@ -44,7 +44,8 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         view.addSubview(self.tableView)
         
         tableView.snp.makeConstraints { (make) in
-            make.top.left.bottom.right.equalTo(view).offset(0)
+            make.top.equalTo(SafeAreaTopHeight)
+            make.left.bottom.right.equalTo(view)
         }
     }
 
@@ -65,6 +66,7 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         
         vmOutput = viewModel.transform(input: ListDetailViewModel.ListDetailInput())
         
+        /// 输出时 更新数据
         vmOutput?.sections.asDriver().drive(tableView.rx.items(dataSource: dataSource)).disposed(by: rx.disposeBag)
         
         let refreshHeader = initRefreshGifHeader(tableView) { [weak self] in
@@ -93,7 +95,6 @@ extension ListDetailViewController: UITableViewDelegate {
         
         let items = dataSource[indexPath.section].items
         let model = items[indexPath.row]
-        
         return BSCommentTableViewCell.getCellHightData(model)
     }
 }

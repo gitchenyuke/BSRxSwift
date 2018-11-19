@@ -28,10 +28,8 @@ class OutputListViewController: BSBaseTableViewController,BSRefreshable {
 
         initUI()
         bindUI()
-        
     }
     
-
     func initUI() {
         
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "ListTableViewCell")

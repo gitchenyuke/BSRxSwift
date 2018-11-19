@@ -23,10 +23,15 @@ class BSTabBarController: UITabBarController {
         let communityVC  = CommunityViewController.init()
         let meVC         = MeViewController.init()
         
-        let essenceNav   = UINavigationController.init(rootViewController: essenceVC)
-        let newestNav    = UINavigationController.init(rootViewController: newestVC)
-        let communityNav = UINavigationController.init(rootViewController: communityVC)
-        let meNav        = UINavigationController.init(rootViewController: meVC)
+        let essenceNav   = BSNavigationViewController.init(rootViewController: essenceVC)
+        let newestNav    = BSNavigationViewController.init(rootViewController: newestVC)
+        let communityNav = BSNavigationViewController.init(rootViewController: communityVC)
+        let meNav        = BSNavigationViewController.init(rootViewController: meVC)
+        
+        configurationNav(essenceNav)
+        configurationNav(newestNav)
+        configurationNav(communityNav)
+        configurationNav(meNav)
         
         addTabBarItem(essenceNav, title:"精华", imageNormal: "btn_home_normal", imageselected: "btn_home_selected")
         addTabBarItem(newestNav, title:"最新", imageNormal: "btn_live_normal", imageselected: "btn_live_selected")
@@ -39,25 +44,34 @@ class BSTabBarController: UITabBarController {
         addComButton()
         addChild(communityNav)
         addChild(meNav)
-        
+    }
+    
+    /// 配置自定义导航栏
+    func configurationNav(_ nav: UINavigationController) {
+        /// 只对当前导航栈有效，不影响其他导航栈
+        nav.navigation.configuration.isEnabled = true
+        /// 移除半透明
+        nav.navigation.configuration.isTranslucent = false
+        nav.navigation.configuration.barTintColor = UIColor.hexadecimalColor(COLOR_NAV_BAR)
+        nav.navigation.configuration.titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.white]
+        /// 设置UIBarButtonItem 图片为原色
+        let backImage = BSImaged("iv_nav_back").withRenderingMode(.alwaysOriginal)
+        nav.navigation.configuration.backImage = backImage
     }
     
     func addComButton() {
         let midBtn = UIButton.init(type: .custom)
-        
         midBtn.setImage(UIImage.init(named: "btn_tabar_add"), for: .normal)
-        
         midBtn.backgroundColor = UIColor.white
-        
         midBtn.addTarget(self, action: #selector(self.minBtnClick), for: .touchUpInside)
         tabBar.addSubview(midBtn)
-        
+
         midBtn.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         midBtn.center = CGPoint(x: tabBar.frame.size.width*0.5, y: tabBar.frame.size.height*0.5)
-        
+
         let vc = UIViewController.init()
         vc.tabBarItem.isEnabled = false
-        
+
         addChild(vc)
     }
     

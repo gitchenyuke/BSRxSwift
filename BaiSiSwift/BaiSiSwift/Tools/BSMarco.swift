@@ -39,8 +39,14 @@ let PlaceholderImage1                        = "defaultGraph_1"
 let PlaceholderImage2                        = "defaultGraph_2"
 let PlaceholderImage3                        = "defaultGraph_3"
 
-let SafeAreaTopHeight:CGFloat                = kScreenHeight >= 812.0 ? 88 : 64
-let SafeAreaBottomHeight:CGFloat             = kScreenHeight >= 812.0 ? 83 : 49
+/// iphoneX机型
+let IsIphoneX                                = UIApplication.shared.statusBarFrame.size.height == 44
+/// 导航栏高度
+let SafeAreaTopHeight:CGFloat                = IsIphoneX ? 88 : 64
+/// tabbar 高度
+let SafeAreaBottomHeight:CGFloat             = IsIphoneX ? 83 : 49
+
+let Nav_Top:CGFloat                          = IsIphoneX ? 44 : 20;
 
 let SdcylesScrollViewHeight:CGFloat          = 200
 let FindFristHeaderCollectionMager:CGFloat   = kScreenWidth/9
@@ -64,10 +70,21 @@ func ViewRadius(view:UIView ,Radius:CGFloat) {
     view.layer.masksToBounds = true
 }
 
+/// 图片
 func BSImaged(_ string:String) -> UIImage {
     return UIImage.init(named: string)!
 }
 
+// 字体
+func BSFonts(_ font:CGFloat) -> UIFont {
+    return UIFont.systemFont(ofSize: font)
+}
+// 字体加粗
+func BSFontb(_ font:CGFloat) -> UIFont {
+    return UIFont.boldSystemFont(ofSize: font)
+}
+
+// 占位图
 func BSPlaceholderImage() -> UIImage {
     return UIImage.init(named: PlaceholderImage2)!
 }

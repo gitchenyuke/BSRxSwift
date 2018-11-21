@@ -30,11 +30,17 @@
 		7F80FDEE217987C3000A5E50 /* RecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FDED217987C3000A5E50 /* RecommendListViewModel.swift */; };
 		7F80FE022179CB2F000A5E50 /* RecommendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FE012179CB2F000A5E50 /* RecommendListCell.swift */; };
 		7F80FE042179DC72000A5E50 /* ListFooterSctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FE032179DC72000A5E50 /* ListFooterSctionView.swift */; };
+		7F81C4FA21A5024100814DEB /* RxSwift+MapTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C4F921A5024100814DEB /* RxSwift+MapTo.swift */; };
+		7F81C4FC21A505D900814DEB /* BSLoginWithRegiestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C4FB21A505D900814DEB /* BSLoginWithRegiestController.swift */; };
+		7F81C4FE21A5385B00814DEB /* iv_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F81C4FD21A5385B00814DEB /* iv_bg.jpg */; };
+		7F81C50021A5489100814DEB /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C4FF21A5489100814DEB /* RegisterViewModel.swift */; };
 		7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */; };
 		7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */; };
 		7FB6BC772191A56D0085E613 /* BSNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */; };
 		7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */; };
 		7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */; };
+		7FF3E3C921A41E80003FF396 /* BSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3E3C821A41E80003FF396 /* BSLoginViewController.swift */; };
+		7FF3E3CB21A41F82003FF396 /* BSRegiestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3E3CA21A41F82003FF396 /* BSRegiestViewController.swift */; };
 		7FF71DB1217D7AD60074E6FF /* OutputListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */; };
 		7FF71DB3217D7B000074E6FF /* BSViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB2217D7B000074E6FF /* BSViewModelType.swift */; };
 		7FF71DB5217D7B8E0074E6FF /* OutputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF71DB4217D7B8E0074E6FF /* OutputViewModel.swift */; };
@@ -118,11 +124,17 @@
 		7F80FDED217987C3000A5E50 /* RecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewModel.swift; sourceTree = "<group>"; };
 		7F80FE012179CB2F000A5E50 /* RecommendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListCell.swift; sourceTree = "<group>"; };
 		7F80FE032179DC72000A5E50 /* ListFooterSctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFooterSctionView.swift; sourceTree = "<group>"; };
+		7F81C4F921A5024100814DEB /* RxSwift+MapTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+MapTo.swift"; sourceTree = "<group>"; };
+		7F81C4FB21A505D900814DEB /* BSLoginWithRegiestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSLoginWithRegiestController.swift; sourceTree = "<group>"; };
+		7F81C4FD21A5385B00814DEB /* iv_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iv_bg.jpg; sourceTree = "<group>"; };
+		7F81C4FF21A5489100814DEB /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailHeaderView.swift; sourceTree = "<group>"; };
 		7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSNavigationViewController.swift; sourceTree = "<group>"; };
 		7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommunityView.swift; sourceTree = "<group>"; };
 		7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCommentTableViewCell.swift; sourceTree = "<group>"; };
+		7FF3E3C821A41E80003FF396 /* BSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSLoginViewController.swift; sourceTree = "<group>"; };
+		7FF3E3CA21A41F82003FF396 /* BSRegiestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSRegiestViewController.swift; sourceTree = "<group>"; };
 		7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputListViewController.swift; sourceTree = "<group>"; };
 		7FF71DB2217D7B000074E6FF /* BSViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSViewModelType.swift; sourceTree = "<group>"; };
 		7FF71DB4217D7B8E0074E6FF /* OutputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +220,7 @@
 				7F035DB62174A596004D7D22 /* Views */,
 				7F035D812174A20D004D7D22 /* AppDelegate.swift */,
 				7F035D832174A20D004D7D22 /* ViewController.swift */,
+				7F81C4FD21A5385B00814DEB /* iv_bg.jpg */,
 				7F035D852174A20D004D7D22 /* Main.storyboard */,
 				7F035D882174A20E004D7D22 /* Assets.xcassets */,
 				7F035D8A2174A20E004D7D22 /* LaunchScreen.storyboard */,
@@ -257,6 +270,9 @@
 				7FF71DB0217D7AD60074E6FF /* OutputListViewController.swift */,
 				7FF941AD217ECB2100978181 /* BSComposeTypeViewController.swift */,
 				7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */,
+				7F81C4FB21A505D900814DEB /* BSLoginWithRegiestController.swift */,
+				7FF3E3C821A41E80003FF396 /* BSLoginViewController.swift */,
+				7FF3E3CA21A41F82003FF396 /* BSRegiestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -275,6 +291,7 @@
 				7F035DC12174A77A004D7D22 /* String+BSExtension.swift */,
 				7F035DB92174A6FD004D7D22 /* UIColor+BSExtension.swift */,
 				7F035DBB2174A723004D7D22 /* UILabel+BSExtension.swift */,
+				7F81C4F921A5024100814DEB /* RxSwift+MapTo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,6 +314,7 @@
 				7FF71DB4217D7B8E0074E6FF /* OutputViewModel.swift */,
 				7FF71DB2217D7B000074E6FF /* BSViewModelType.swift */,
 				7FFB7010218C2550004DBEBF /* ListDetailViewModel.swift */,
+				7F81C4FF21A5489100814DEB /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -469,6 +487,7 @@
 				7F035D8C2174A20E004D7D22 /* LaunchScreen.storyboard in Resources */,
 				7F035D892174A20E004D7D22 /* Assets.xcassets in Resources */,
 				7F035D872174A20D004D7D22 /* Main.storyboard in Resources */,
+				7F81C4FE21A5385B00814DEB /* iv_bg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +600,7 @@
 				7FB6BC772191A56D0085E613 /* BSNavigationViewController.swift in Sources */,
 				7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */,
 				7FF85BDF2175CC290028CD80 /* BSAPI.swift in Sources */,
+				7F81C4FA21A5024100814DEB /* RxSwift+MapTo.swift in Sources */,
 				7F035DC52174ABB5004D7D22 /* BSBaseViewController.swift in Sources */,
 				7FF71DB9217DBE6F0074E6FF /* BSRefreshGifHeader.swift in Sources */,
 				7F035DBC2174A723004D7D22 /* UILabel+BSExtension.swift in Sources */,
@@ -592,6 +612,7 @@
 				7F80FDEE217987C3000A5E50 /* RecommendListViewModel.swift in Sources */,
 				7FF941AC217EC5EC00978181 /* BSComposeTypeButton.swift in Sources */,
 				7F035D842174A20D004D7D22 /* ViewController.swift in Sources */,
+				7FF3E3C921A41E80003FF396 /* BSLoginViewController.swift in Sources */,
 				7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */,
 				7FF85BEB2175FC310028CD80 /* BSListViewController.swift in Sources */,
 				7FFB7011218C2550004DBEBF /* ListDetailViewModel.swift in Sources */,
@@ -602,6 +623,7 @@
 				7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */,
 				7F035DCF2174AFAA004D7D22 /* MeViewController.swift in Sources */,
 				7FF85BE92175F8060028CD80 /* ListTableViewCell.swift in Sources */,
+				7F81C4FC21A505D900814DEB /* BSLoginWithRegiestController.swift in Sources */,
 				7FF9C80921789AB0003765FF /* ListColumnView.swift in Sources */,
 				7FF9C8062178819A003765FF /* ListHeaderSctionView.swift in Sources */,
 				7F035DD12174AFE3004D7D22 /* BSTabBarController.swift in Sources */,
@@ -610,6 +632,7 @@
 				7F035DB82174A693004D7D22 /* BSMarco.swift in Sources */,
 				7F80FE042179DC72000A5E50 /* ListFooterSctionView.swift in Sources */,
 				7F035DCD2174AF9B004D7D22 /* CommunityViewController.swift in Sources */,
+				7F81C50021A5489100814DEB /* RegisterViewModel.swift in Sources */,
 				7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */,
 				7F035DC92174AF62004D7D22 /* EssenceViewController.swift in Sources */,
 				7FF85BE12175CF6B0028CD80 /* BSEntity.swift in Sources */,
@@ -620,6 +643,7 @@
 				7FF71DBD217DD6DF0074E6FF /* BSBaseTableViewController.swift in Sources */,
 				7F80FDEC217987A6000A5E50 /* RecommendListViewController.swift in Sources */,
 				7F035DC72174ABD6004D7D22 /* BSBaseTableViewCell.swift in Sources */,
+				7FF3E3CB21A41F82003FF396 /* BSRegiestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

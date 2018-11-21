@@ -76,10 +76,9 @@ let LoadingPlugin = NetworkActivityPlugin { (type, target) in
     
     switch type {
     case .began:
-        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
-        SVProgressHUD.show(withStatus: "正在加载...")
+        BSProgressHUD.showLoading("正在加载...")
     case .ended:
-        SVProgressHUD.dismiss()
+        BSProgressHUD.dismissHUD()
     }
 }
 

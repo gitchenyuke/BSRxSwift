@@ -9,17 +9,26 @@
 import UIKit
 import RxSwift
 
+
 class NewestViewController: BSBaseViewController {
 
-    var disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpNavigation()
         
-        view.backgroundColor = UIColor.orange
+        navigation.item.title = "最新"
+        
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        navigationController?.pushViewController(TestController(), animated: true)
+    }
+    
+    
 }
+
+

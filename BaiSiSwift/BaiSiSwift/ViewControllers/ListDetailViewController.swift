@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import CoreMedia
 import MJRefresh
 import Kingfisher
 import RxDataSources
@@ -27,7 +28,6 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initUI()
         bindViewModel()
     }
@@ -35,6 +35,7 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
     func initUI() {
         
         headerView = ListDetailHeaderView.init(frame: .zero)
+        headerView.playerManager.delegate = self
         headerView.reload(data: headerEntity)
         headerView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: ListDetailHeaderView.getHightData(data: headerEntity))
         
@@ -70,10 +71,7 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         vmOutput?.sections.asDriver().drive(tableView.rx.items(dataSource: dataSource)).disposed(by: rx.disposeBag)
         
         let refreshHeader = initRefreshGifHeader(tableView) { [weak self] in
-            self?.viewModel.page = "0"
-            self?.viewModel.jsonNun = 0
-            self?.viewModel.json = "0-20.json"
-            self?.vmOutput?.requestCommand.onNext(false)
+            self?.reloadData()
         }
         
         let refreshFooter = initRefreshFooter(tableView) { [weak self] in
@@ -82,13 +80,27 @@ class ListDetailViewController: BSBaseTableViewController,BSRefreshable {
         
         vmOutput?.autoSetRefreshHeaderStatus(header: refreshHeader, footer: refreshFooter).disposed(by: rx.disposeBag)
         
-        refreshHeader.beginRefreshing()
+        reloadData()
         
+        //refreshHeader.beginRefreshing()
+    }
+    
+    func reloadData() {
+        self.viewModel.page = "0"
+        self.viewModel.jsonNun = 0
+        self.viewModel.json = "0-20.json"
+        self.vmOutput?.requestCommand.onNext(false)
+    }
+    
+    deinit {
+        print("释放了")
+        /// 停止播放
+        headerView.playerManager.pause()
     }
     
 }
 
-
+// MARK: UITableViewDelegate
 extension ListDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -96,5 +108,24 @@ extension ListDetailViewController: UITableViewDelegate {
         let items = dataSource[indexPath.section].items
         let model = items[indexPath.row]
         return BSCommentTableViewCell.getCellHightData(model)
+    }
+}
+
+
+// MARK: PlayerManagerDelegate
+extension ListDetailViewController: PlayerManagerDelegate{
+    // 分享按钮点击回调
+    func playerViewShare() {
+        print("处理分享逻辑")
+    }
+
+    // 播放完成回调
+    func playFinished() {
+        print("播放完了😁")
+    }
+    
+    // 返回按钮点击回调
+    func playerViewBack() {
+        navigationController?.popViewController(animated: true)
     }
 }

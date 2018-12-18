@@ -21,6 +21,13 @@ class BSLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initUI()
+        bindViewModel()
+    }
+    
+    /// ui
+    func initUI() {
+        
         bgView = UIView.init(frame: CGRect(x: 20, y: 100, width: kScreenWidth-40, height: 120))
         ViewRadius(view: bgView, Radius: 5)
         
@@ -45,7 +52,7 @@ class BSLoginViewController: UIViewController {
             .backgroundImage(disabledImage, for: .disabled)
             .frame(CGRect(x: 20, y: bgView.frame.maxY + 15, width: kScreenWidth-40, height: 50))
             .font(BSFonts(FONT_MIDDLE)).build
-
+        
         forgetpswLabel = UILabel
             .init(frame: CGRect(x: loginButton.frame.maxX - 100, y: loginButton.frame.maxY + 10, width: 100, height: 20))
             .chain.font(BSFonts(FONT_MIDDLE))
@@ -62,6 +69,51 @@ class BSLoginViewController: UIViewController {
         bgView.addSubview(mobiletf)
         bgView.addSubview(ivLine)
         bgView.addSubview(passWordtf)
+    }
+    
+    /// bindViewModel
+    func bindViewModel() {
+        
+        let viewModel = BSLoginViewModel.init()
+        
+        let input = BSLoginViewModel.Input.init(mobile: mobiletf.rx.text.orEmpty.shareOnce(),
+                                                pwd: passWordtf.rx.text.orEmpty.shareOnce(),
+                                                loginTips: loginButton.rx.tap)
+        
+        let output = viewModel.transform(input: input)
+        
+        /// 登录是否可点击
+        output.loginEnbled
+            .drive(loginButton.rx.isEnabled)
+            .disposed(by: rx.disposeBag)
+        
+        /// 点击登录回收键盘
+        output.login
+            .drive(view.rx.endEditing)
+            .disposed(by: rx.disposeBag)
+        
+        /// 登录成功
+        output.loginSucceed
+            .drive(NotificationCenter.default.rx.postLoginSucceedNotification)
+            .disposed(by: rx.disposeBag)
+        
+        
+        
+        // ---------------  如果是当前控制器的话  ---------------- //
+        /// 登录成功
+//        output.loginSucceed
+//            .map(to: ())
+//            .drive(rx.pop(animated: true))
+//            .disposed(by: rx.disposeBag)
+        
+//        output.loginSucceed
+//            .asObservable()
+//            .subscribe(onNext: { [weak self] (succeed) in
+//                if succeed {
+//                    self?.navigationController?.popViewController(animated: true)
+//                }
+//        }).disposed(by: rx.disposeBag)
+        
     }
 
 }

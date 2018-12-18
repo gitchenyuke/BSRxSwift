@@ -136,6 +136,6 @@ extension RecommendListViewController : UITableViewDelegate ,HeaderSectionDelega
     func didSelectedHeader(data: JHListEntity) {
         let ctl = ListDetailViewController()
         ctl.headerEntity = data
-        self.navigationController?.pushViewController(ctl, animated: true)
+        self.navigationController?.pushViewController(ctl, animated: false)
     }
 }

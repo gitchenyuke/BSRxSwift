@@ -19,20 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        /// 设置状态栏为白色 (需要在info.plist 添加key：View controller-based status bar appearance 设置为NO)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
         /// 配置自定义nav 
         UIViewController.navigation.swizzle()
         window = UIWindow.init(frame: UIScreen.main.bounds).chain.backgroundColor(UIColor.white).build
-        window?.rootViewController = BSTabBarController.init()
+        window?.rootViewController = BSProvider.customBouncesStyle()
         window?.makeKeyAndVisible()
-        
-//        /// 设置nav背景颜色
-//        UINavigationBar.appearance().barTintColor = UIColor.hexadecimalColor(hexadecimal: COLOR_NAV_BAR)
-//
-//        /// 关闭导航栏半透明效果
-//        UINavigationBar.appearance().isTranslucent = false
-//        
-//        /// 设置nav字体大小和颜色
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.white]
 
         // TabBar设置字体颜色
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
@@ -44,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().estimatedRowHeight = 0
         UITableView.appearance().estimatedSectionFooterHeight = 0
         UITableView.appearance().estimatedSectionHeaderHeight = 0
+        
+        /// 休眠2秒 显示启动图
+        Thread.sleep(forTimeInterval: 2)
         
         return true
     }

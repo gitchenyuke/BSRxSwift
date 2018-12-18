@@ -14,6 +14,15 @@ class BSNavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        /// 只对当前导航栈有效，不影响其他导航栈
+        self.navigation.configuration.isEnabled = true
+        /// 移除半透明
+        self.navigation.configuration.isTranslucent = false
+        self.navigation.configuration.barTintColor = UIColor.hexadecimalColor(COLOR_NAV_BAR)
+        self.navigation.configuration.titleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.white]
+        /// 设置UIBarButtonItem 图片为原色
+        let backImage = BSImaged("nav_back_white").withRenderingMode(.alwaysOriginal)
+        self.navigation.configuration.backImage = backImage
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

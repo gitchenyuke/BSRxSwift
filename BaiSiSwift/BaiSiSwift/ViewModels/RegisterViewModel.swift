@@ -30,7 +30,7 @@ extension RegisterViewModel: BSViewModelType {
     }
     
     struct RegisterOuput {
-        /// 注册按钮是否可以点击
+        /// 注册按钮是否可以点击 跟UI挂钩最好用Driver
         let registerEnbled:Driver<Bool>
         /// 点击注册是否 隐藏键盘
         let register: Driver<Bool>
@@ -59,9 +59,12 @@ extension RegisterViewModel: BSViewModelType {
         }.asDriver(onErrorJustReturn: false)
         
         let registerSuccess = input.registerTap.withLatestFrom(mobileAndPwd).flatMapLatest { (moble,pwd) -> Driver<Bool> in
-            
             if moble.count == 11 && pwd.count >= 8 {
                 BSProgressHUD.showSuccess("注册成功")
+                let userManger = UserCenterManger.sharedInstance
+                let user = UserModel.init(mobile: moble, pwd: pwd)
+                userManger.user = user
+                userManger.saveToCache()
                 return Driver.just(true)
             }else{
                 return Driver.just(false)

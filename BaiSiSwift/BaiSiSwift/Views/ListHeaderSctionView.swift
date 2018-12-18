@@ -27,6 +27,8 @@ class ListHeaderSctionView: UIView {
     var labTime: UILabel!
     var labContent: UILabel!
     var gifLogo: UIImageView!
+    var videoLogo: UIImageView!
+    
     var ivCover: GIFImageView!
     var columnDZ: ListColumnView!
     var columnCai: ListColumnView!
@@ -51,6 +53,7 @@ class ListHeaderSctionView: UIView {
         labContent = UILabel.text(textColor: COLOR_BLACK_TWO, textFont: FONT_BIG)
         ivCover = GIFImageView.init(frame: .zero)
         gifLogo = UIImageView.init(image: BSImaged("iv_gif"))
+        videoLogo = UIImageView.init(image: BSImaged("iv_video_player"))
         
         columnDZ = ListColumnView.init(frame: CGRect.zero)
         columnCai = ListColumnView.init(frame: CGRect.zero)
@@ -85,11 +88,18 @@ class ListHeaderSctionView: UIView {
         self.addSubview(columnFX)
         self.addSubview(columnPL)
         ivCover.addSubview(gifLogo)
+        ivCover.addSubview(videoLogo)
         
         ivIcon.frame  = CGRect(x: 15, y: 15, width: 40, height: 40)
         labName.frame = CGRect(x: ivIcon.frame.maxX + 5, y: ivIcon.frame.minY, width: 200, height: 16)
         labTime.frame = CGRect(x: labName.frame.minX, y: labName.frame.maxY + 5, width: 200, height: 16)
         gifLogo.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        videoLogo.snp.makeConstraints { (make) in
+            make.center.equalTo(ivCover)
+            make.size.equalTo(CGSize.init(width: 60, height: 60))
+        }
+        
     }
     
   
@@ -133,6 +143,9 @@ class ListHeaderSctionView: UIView {
                 gifLogo.isHidden = true
                 ivCover.kf.setImage(with: ImageResource(downloadURL: URL.init(string: coverstr)!), placeholder: UIImage.init(named: DefaultGraph), options: nil, progressBlock: nil, completionHandler: nil)
             }
+            
+            videoLogo.isHidden = data.type != "video"
+            
         }
         
         ivIcon.kf.setImage(with: ImageResource(downloadURL: URL.init(string: imageStr)!), placeholder: UIImage.init(named: DefaultGraph))
@@ -140,6 +153,7 @@ class ListHeaderSctionView: UIView {
         let textHight = String.getNormalStrH(str: data.text ?? "", strFont: FONT_BIG, w: kScreenWidth-30)
         labContent.frame = CGRect(x: 15, y: ivIcon.frame.maxY + 15, width: kScreenWidth - 30, height: textHight)
         ivCover.frame = CGRect(x: 15, y: labContent.frame.maxY + 10, width: kScreenWidth - 30, height: 200)
+        videoLogo.center = ivCover.center
         
         let columnW = (kScreenWidth - 30)/4
         

@@ -20,7 +20,25 @@ class BSBaseViewController: UIViewController {
         /// 隐藏分割线
         navigation.bar.isShadowHidden = true
         
+        /// 自定义返回 图片往左移一点
+        //setBackButtonItem()
     }
+    
+    
+    /// 自定义返回 图片往左移一点
+//    func setBackButtonItem() {
+//        if (self.navigationController?.viewControllers.count)! > 1 {
+//            let backButton = UIButton(type: .custom).chain.frame(CGRect(x: 0, y: 0, width: 44, height: 44)).build
+//            backButton.setImage(BSImaged("nav_back_white"), for: .normal)
+//            backButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -30, bottom: 0, right: 0)
+//            backButton.addTarget(self, action: #selector(backBarButtonAction), for: .touchUpInside)
+//            navigation.item.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+//        }
+//    }
+   
+//    @objc func backBarButtonAction() {
+//        self.navigationController?.popViewController(animated: true)
+//    }
     
     /// 设置精华 最新导航栏
     func setUpNavigation() {

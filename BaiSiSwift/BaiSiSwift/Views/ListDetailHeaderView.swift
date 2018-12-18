@@ -8,6 +8,7 @@
 
 import UIKit
 import Gifu
+import CoreMedia
 import Kingfisher
 
 class ListDetailHeaderView: UIView {
@@ -16,7 +17,7 @@ class ListDetailHeaderView: UIView {
     var labContext: UILabel!
     var labTime: UILabel!
     var communityView: ListCommunityView!
-    
+    var playerManager: PlayerManager!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,10 +35,13 @@ class ListDetailHeaderView: UIView {
         
         communityView = ListCommunityView.init(frame: .zero)
         
+        playerManager = PlayerManager(playerFrame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200), contentView: self)
+        
         self.addSubview(ivCover)
         self.addSubview(labContext)
         self.addSubview(labTime)
         self.addSubview(communityView)
+        self.addSubview(playerManager.playerView)
     }
     
     func reload(data:JHListEntity) {
@@ -59,9 +63,18 @@ class ListDetailHeaderView: UIView {
             ivCover.isHidden = false
             break
         case "video":
-            imageH = 200
+            
+            let videoWidt = data.video?.width ?? 0
+            let videoHight = data.video?.height ?? 0
+            let scale:CGFloat = videoHight / videoWidt
+            imageH = kScreenWidth * scale > kScreenHeight - SafeAreaTopHeight ? kScreenHeight - SafeAreaTopHeight : kScreenWidth * scale
             coverstr = data.video?.thumbnail?.first ?? ""
+            
             ivCover.isHidden = false
+            playerManager.playerView.layoutFrame(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: imageH))
+            playerManager.playUrlStr = data.video?.video?.first ?? ""
+            playerManager.seekToTime(0)// 跳转至第N秒的进度位置，从头播放则是0
+            playerManager.play()
             break
         case "gif":
             imageH = 200
@@ -74,6 +87,10 @@ class ListDetailHeaderView: UIView {
         default:
             break
         }
+        
+       
+        /// 是否显示播放器
+        playerManager.playerView.isHidden = data.type! != "video"
         
         if coverstr.count != 0 {
             if data.type == "gif" { //gif 图片
@@ -115,6 +132,11 @@ class ListDetailHeaderView: UIView {
             let imageHight1 = data.image?.height ?? 0
             let scale:CGFloat = imageHight1 / imageWidt
             imageHight = kScreenWidth * scale
+        }else if data.type == "video"{
+            let videoWidt = data.video?.width ?? 0
+            let videoHight = data.video?.height ?? 0
+            let scale:CGFloat = videoHight / videoWidt
+            imageHight = kScreenWidth * scale > kScreenHeight - SafeAreaTopHeight ? kScreenHeight - SafeAreaTopHeight : kScreenWidth * scale
         }else{
             imageHight = 200
         }

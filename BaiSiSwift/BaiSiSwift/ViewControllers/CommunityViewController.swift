@@ -14,6 +14,8 @@ class CommunityViewController: BSBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigation.item.title = "社区"
     }
     
 

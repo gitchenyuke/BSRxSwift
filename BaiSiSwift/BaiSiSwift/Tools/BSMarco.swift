@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+// View
+//当前视图的view
+let kRootView = UIApplication.shared.keyWindow?.rootViewController?.view
+
 let kScreenWidth:CGFloat                     = UIScreen.main.bounds.size.width
 let kScreenHeight:CGFloat                    = UIScreen.main.bounds.size.height
 
@@ -53,7 +57,8 @@ let FindFristHeaderCollectionMager:CGFloat   = kScreenWidth/9
 
 let XHLinkCollectionViewCellW:CGFloat        = (kScreenWidth-40 - 70)/3
 
-let DefaultGraph:String = "defaultGraph_2" //图片默认占位图
+let DefaultGraph:String                      = "defaultGraph_2" //图片默认占位图
+let MeCellWithd:CGFloat                      = (kScreenWidth - 130) / 5.0
 
 
 // View 圆角和加边框
@@ -64,7 +69,7 @@ func ViewBorderRadius(view:UIView ,Radius:CGFloat ,Width:CGFloat,Color:UIColor) 
     view.layer.borderColor = Color.cgColor
 }
 
-// View 倒圆角
+/// View 倒圆角
 func ViewRadius(view:UIView ,Radius:CGFloat) {
     view.layer.cornerRadius = Radius
     view.layer.masksToBounds = true
@@ -75,16 +80,21 @@ func BSImaged(_ string:String) -> UIImage {
     return UIImage.init(named: string)!
 }
 
-// 字体
+/// 字体
 func BSFonts(_ font:CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: font)
 }
-// 字体加粗
+/// 字体加粗
 func BSFontb(_ font:CGFloat) -> UIFont {
     return UIFont.boldSystemFont(ofSize: font)
 }
 
-// 占位图
+/// 颜色
+func BSColors(_ hexadecimalColor:String) -> UIColor {
+    return UIColor.hexadecimalColor(hexadecimalColor)
+}
+
+/// 占位图
 func BSPlaceholderImage() -> UIImage {
     return UIImage.init(named: PlaceholderImage2)!
 }

@@ -54,3 +54,13 @@ public extension Reactive where Base: NotificationCenter {
         }
     }
 }
+
+public extension Reactive where Base: NotificationCenter {
+    var postLoginSucceedNotification: Binder<Bool>{
+        return Binder(self.base) { notificationCenter , post in
+            if post {
+                notificationCenter.post(name: NSNotification.Name("LoginSucceed"), object: nil, userInfo: nil)
+            }
+        }
+    }
+}

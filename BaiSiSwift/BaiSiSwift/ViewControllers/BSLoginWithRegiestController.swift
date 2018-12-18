@@ -97,6 +97,14 @@ class BSLoginWithRegiestController: UIViewController {
             self?.scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
         }).disposed(by: rx.disposeBag)
         
+        NotificationCenter.default
+            .rx.notification(Notification.Name("LoginSucceed"))
+            .takeUntil(self.rx.deallocated)
+            .subscribe(onNext: { [weak self] (notification) in
+            //self?.rx.pop()
+            self?.navigationController?.popViewController(animated: true)
+        }).disposed(by: rx.disposeBag)
+        
     }
     
 //    deinit {

@@ -25,6 +25,7 @@ class BSRegiestViewController: UIViewController {
         bindViewModel()
     }
     
+    /// MARK: - UI
     func initUI() {
         
         bgView = UIView.init(frame: CGRect(x: 20, y: 100, width: kScreenWidth-40, height: 120))
@@ -60,8 +61,10 @@ class BSRegiestViewController: UIViewController {
         bgView.addSubview(mobiletf)
         bgView.addSubview(ivLine)
         bgView.addSubview(passWordtf)
+        
     }
     
+    // MARK: - bindViewModel
     func bindViewModel() {
         
         let viewModel = RegisterViewModel.init()

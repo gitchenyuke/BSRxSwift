@@ -13,7 +13,6 @@ class BSNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         /// 只对当前导航栈有效，不影响其他导航栈
         self.navigation.configuration.isEnabled = true
         /// 移除半透明

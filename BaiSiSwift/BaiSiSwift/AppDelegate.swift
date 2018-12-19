@@ -27,12 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds).chain.backgroundColor(UIColor.white).build
         window?.rootViewController = BSProvider.customBouncesStyle()
         window?.makeKeyAndVisible()
-
-        // TabBar设置字体颜色
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .selected)
-        // TabBar设置字体的大小
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12.0)], for: .normal)
         
         /// 解决iOS11，仅实现heightForHeaderInSection，没有实现viewForHeaderInSection方法时,section间距大的问题
         UITableView.appearance().estimatedRowHeight = 0

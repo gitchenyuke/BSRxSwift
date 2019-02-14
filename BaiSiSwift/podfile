@@ -22,5 +22,6 @@ pod 'Kingfisher'
 pod 'DZNEmptyDataSet'
 pod 'Moya/RxSwift'
 pod 'TYPagerController'
+pod 'IQKeyboardManagerSwift'
 pod 'ESTabBarController-swift'
 end

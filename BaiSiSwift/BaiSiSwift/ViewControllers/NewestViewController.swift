@@ -12,15 +12,12 @@ import RxSwift
 
 class NewestViewController: BSBaseViewController {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpNavigation()
         
         navigation.item.title = "最新"
-        
         
     }
     

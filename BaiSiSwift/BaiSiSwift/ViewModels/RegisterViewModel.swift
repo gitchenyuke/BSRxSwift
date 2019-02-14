@@ -62,7 +62,7 @@ extension RegisterViewModel: BSViewModelType {
             if moble.count == 11 && pwd.count >= 8 {
                 BSProgressHUD.showSuccess("注册成功")
                 let userManger = UserCenterManger.sharedInstance
-                let user = UserModel.init(mobile: moble, pwd: pwd)
+                let user = UserModel.init(mobile: moble, pwd: pwd,login:false)
                 userManger.user = user
                 userManger.saveToCache()
                 return Driver.just(true)

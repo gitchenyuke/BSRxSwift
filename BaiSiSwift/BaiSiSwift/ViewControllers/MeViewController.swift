@@ -25,7 +25,6 @@ class MeViewController: BSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         navigation.item.title = "我"
         
         view.addSubview(collectionView)
@@ -53,10 +52,19 @@ class MeViewController: BSBaseViewController {
         },configureSupplementaryView: {(ds ,cv, kind, ip) in
             
             let section = cv.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "MeCollectionReusableView", for: ip) as! MeCollectionReusableView
-            section.btn.rx.tap.subscribe(onNext: { [weak self] (sender) in
+            
+            section.setLoginData()
+            
+            section.btn.rx.tap.asDriver().drive(onNext: { [weak self] () in
                 let loginVC = BSLoginWithRegiestController()
                 self?.navigationController?.pushViewController(loginVC, animated: true)
-            }).disposed(by: self.rx.disposeBag)
+            }).disposed(by: section.disposeBag)
+            
+            /// 释放section里的section.disposeBag 防止多次订阅 以后tableviewcell 里btn的订阅可以这样
+            section.btnName.rx.tap.asDriver().drive(onNext: { [weak self] () in
+                self?.setOutData(sectionView: section)
+            }).disposed(by: section.disposeBag)
+            
             return section
         })
         
@@ -64,6 +72,24 @@ class MeViewController: BSBaseViewController {
         items.bind(to: collectionView.rx.items(dataSource: dataScource)).disposed(by: rx.disposeBag)
         /// 设置代理
         collectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        
+        /// 登录成功
+        NotificationCenter.default
+            .rx.notification(Notification.Name("LoginSucceed"))
+            .takeUntil(self.rx.deallocated)
+            .subscribe(onNext: { [weak self] (notification) in
+                self?.collectionView.reloadData()
+            }).disposed(by: rx.disposeBag)
+    }
+    
+    /// push BSSettingViewController
+    func setOutData(sectionView:MeCollectionReusableView) {
+        let vc = BSSettingViewController()
+        // 闭包传回退出的事件
+        vc.getBlock {
+            sectionView.setLoginData()
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

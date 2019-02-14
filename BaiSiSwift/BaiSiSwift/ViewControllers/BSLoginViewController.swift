@@ -33,14 +33,14 @@ class BSLoginViewController: UIViewController {
         
         mobiletf = UITextField.init(frame: CGRect(x: 10, y: 0, width: kScreenWidth-30, height: 60)).chain
             .textColor(UIColor.white).placeholder("手机号")
-            .font(BSFonts(FONT_MIDDLE)).build
+            .font(BSFonts(FONT_MIDDLE)).keyboardType(.numberPad).build
         
         ivLine = UIImageView.init(frame: CGRect(x: 0, y: 60, width: kScreenWidth-40, height: 0.5))
             .chain.backgroundColor(UIColor.hexadecimalColor(COLOR_LINE)).build
         
         passWordtf = UITextField.init(frame: CGRect(x: 10, y: 60, width: kScreenWidth-30, height: 60)).chain
             .textColor(UIColor.white).placeholder("密码")
-            .font(BSFonts(FONT_MIDDLE)).build
+            .font(BSFonts(FONT_MIDDLE)).keyboardType(.default).build
         
         let disabledImage = imageFromColor(UIColor.hexadecimalColor(COLOR_LINE), CGSize.init(width: kScreenWidth - 40, height: 50))
         let normalImage = imageFromColor(UIColor.hexadecimalColor(COLOR_NAV_BAR), CGSize.init(width: kScreenWidth - 40, height: 50))

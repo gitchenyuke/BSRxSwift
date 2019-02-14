@@ -9,6 +9,7 @@
 import UIKit
 import EachNavigationBar
 import CocoaChainKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 控制整个功能是否启用
+        IQKeyboardManager.shared.enable = true
+        // 点击背景是否收起键盘
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         /// 设置状态栏为白色 (需要在info.plist 添加key：View controller-based status bar appearance 设置为NO)
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
@@ -35,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// 休眠2秒 显示启动图
         Thread.sleep(forTimeInterval: 2)
+        
+        /// 开启监测FPS CPU等
+        #if DEBUG
+        PerformanceMonitor.shared().start()
+        #endif
         
         return true
     }

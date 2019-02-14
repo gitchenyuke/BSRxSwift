@@ -12,10 +12,12 @@ import Cache
 struct UserModel: Codable{
     var mobile: String
     var pwd:String
+    var login: Bool //是否登录
 }
 
 class UserCenterManger {
     var user:UserModel!
+    
     /// 单例
     static let sharedInstance = UserCenterManger()
 
@@ -54,5 +56,9 @@ extension UserCenterManger {
 
         let userStorage = dataStorage.transformCodable(ofType: UserModel.self)
         try? userStorage.setObject(user, forKey: "user")
+    }
+    
+    func isLogin() -> Bool {
+        return self.user.login
     }
 }

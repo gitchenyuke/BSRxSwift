@@ -27,6 +27,14 @@
 		7F035DCF2174AFAA004D7D22 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F035DCE2174AFAA004D7D22 /* MeViewController.swift */; };
 		7F41FC5821AD52E800A0E55D /* UserCenterManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41FC5721AD52E800A0E55D /* UserCenterManger.swift */; };
 		7F41FC5A21AD563900A0E55D /* BSLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41FC5921AD563900A0E55D /* BSLoginViewModel.swift */; };
+		7F5F3FF321E885F30005FDEF /* BSSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F3FF221E885F30005FDEF /* BSSettingViewController.swift */; };
+		7F7362E221DF7409006B1A3E /* LinkedFramesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362DB21DF7408006B1A3E /* LinkedFramesList.swift */; };
+		7F7362E321DF7409006B1A3E /* WindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362DC21DF7408006B1A3E /* WindowViewController.swift */; };
+		7F7362E421DF7409006B1A3E /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362DD21DF7408006B1A3E /* MarginLabel.swift */; };
+		7F7362E521DF7409006B1A3E /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362DE21DF7408006B1A3E /* PerformanceMonitor.swift */; };
+		7F7362E621DF7409006B1A3E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362DF21DF7408006B1A3E /* Protocols.swift */; };
+		7F7362E721DF7409006B1A3E /* PerformanceСalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362E021DF7408006B1A3E /* PerformanceСalculator.swift */; };
+		7F7362E821DF7409006B1A3E /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7362E121DF7408006B1A3E /* PerformanceView.swift */; };
 		7F80FDEC217987A6000A5E50 /* RecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FDEB217987A6000A5E50 /* RecommendListViewController.swift */; };
 		7F80FDEE217987C3000A5E50 /* RecommendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FDED217987C3000A5E50 /* RecommendListViewModel.swift */; };
 		7F80FE022179CB2F000A5E50 /* RecommendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80FE012179CB2F000A5E50 /* RecommendListCell.swift */; };
@@ -44,6 +52,7 @@
 		7F92E58621C3ADB700B15170 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92E57F21C3ADB700B15170 /* PlayerView.swift */; };
 		7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */; };
 		7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */; };
+		7FA2808821D35E3100F9755E /* UIView+BSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2808721D35E3100F9755E /* UIView+BSExtension.swift */; };
 		7FB6BC772191A56D0085E613 /* BSNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */; };
 		7FDD8D4C218B0B1D00157312 /* ListCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */; };
 		7FF23B71218FE27D004FDE8E /* BSCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */; };
@@ -138,6 +147,14 @@
 		7F035DCE2174AFAA004D7D22 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		7F41FC5721AD52E800A0E55D /* UserCenterManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterManger.swift; sourceTree = "<group>"; };
 		7F41FC5921AD563900A0E55D /* BSLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSLoginViewModel.swift; sourceTree = "<group>"; };
+		7F5F3FF221E885F30005FDEF /* BSSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSettingViewController.swift; sourceTree = "<group>"; };
+		7F7362DB21DF7408006B1A3E /* LinkedFramesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedFramesList.swift; sourceTree = "<group>"; };
+		7F7362DC21DF7408006B1A3E /* WindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowViewController.swift; sourceTree = "<group>"; };
+		7F7362DD21DF7408006B1A3E /* MarginLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
+		7F7362DE21DF7408006B1A3E /* PerformanceMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
+		7F7362DF21DF7408006B1A3E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		7F7362E021DF7408006B1A3E /* PerformanceСalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceСalculator.swift"; sourceTree = "<group>"; };
+		7F7362E121DF7408006B1A3E /* PerformanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceView.swift; sourceTree = "<group>"; };
 		7F80FDEB217987A6000A5E50 /* RecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewController.swift; sourceTree = "<group>"; };
 		7F80FDED217987C3000A5E50 /* RecommendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewModel.swift; sourceTree = "<group>"; };
 		7F80FE012179CB2F000A5E50 /* RecommendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListCell.swift; sourceTree = "<group>"; };
@@ -155,6 +172,7 @@
 		7F92E57F21C3ADB700B15170 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		7F9AAA91218AE32500AD11F7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		7F9AAA93218AE4D500AD11F7 /* ListDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailHeaderView.swift; sourceTree = "<group>"; };
+		7FA2808721D35E3100F9755E /* UIView+BSExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BSExtension.swift"; sourceTree = "<group>"; };
 		7FB6BC762191A56D0085E613 /* BSNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSNavigationViewController.swift; sourceTree = "<group>"; };
 		7FDD8D4B218B0B1D00157312 /* ListCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommunityView.swift; sourceTree = "<group>"; };
 		7FF23B70218FE27D004FDE8E /* BSCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -221,6 +239,7 @@
 		7F006D5F21B4DC9700545955 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				7F7362DA21DF7408006B1A3E /* GDPerformanceMonitoring */,
 				7F92E57621C3ADB700B15170 /* Player */,
 			);
 			path = Vendor;
@@ -316,6 +335,7 @@
 				7F81C4FB21A505D900814DEB /* BSLoginWithRegiestController.swift */,
 				7FF3E3C821A41E80003FF396 /* BSLoginViewController.swift */,
 				7FF3E3CA21A41F82003FF396 /* BSRegiestViewController.swift */,
+				7F5F3FF221E885F30005FDEF /* BSSettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -337,6 +357,7 @@
 				7F81C4F921A5024100814DEB /* RxSwift+MapTo.swift */,
 				7FF4A9AC21AE401A00EA4ED8 /* Rx+UIViewController.swift */,
 				7FF5697221AFEFC0008729C4 /* UINavigationController+BSTransitions.swift */,
+				7FA2808721D35E3100F9755E /* UIView+BSExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,6 +427,20 @@
 				7FF4A9BA21AE8D8900EA4ED8 /* BSBasicContentView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7F7362DA21DF7408006B1A3E /* GDPerformanceMonitoring */ = {
+			isa = PBXGroup;
+			children = (
+				7F7362DB21DF7408006B1A3E /* LinkedFramesList.swift */,
+				7F7362DC21DF7408006B1A3E /* WindowViewController.swift */,
+				7F7362DD21DF7408006B1A3E /* MarginLabel.swift */,
+				7F7362DE21DF7408006B1A3E /* PerformanceMonitor.swift */,
+				7F7362DF21DF7408006B1A3E /* Protocols.swift */,
+				7F7362E021DF7408006B1A3E /* PerformanceСalculator.swift */,
+				7F7362E121DF7408006B1A3E /* PerformanceView.swift */,
+			);
+			path = GDPerformanceMonitoring;
 			sourceTree = "<group>";
 		};
 		7F92E57621C3ADB700B15170 /* Player */ = {
@@ -631,6 +666,7 @@
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -658,6 +694,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -690,18 +727,22 @@
 				7FF85BDF2175CC290028CD80 /* BSAPI.swift in Sources */,
 				7F81C4FA21A5024100814DEB /* RxSwift+MapTo.swift in Sources */,
 				7F92E58121C3ADB700B15170 /* View(Extension).swift in Sources */,
+				7F7362E221DF7409006B1A3E /* LinkedFramesList.swift in Sources */,
 				7F035DC52174ABB5004D7D22 /* BSBaseViewController.swift in Sources */,
 				7FF71DB9217DBE6F0074E6FF /* BSRefreshGifHeader.swift in Sources */,
+				7F7362E321DF7409006B1A3E /* WindowViewController.swift in Sources */,
 				7F035DBC2174A723004D7D22 /* UILabel+BSExtension.swift in Sources */,
 				7FF85B8F21758D990028CD80 /* NavProtocol.swift in Sources */,
 				7FF85BED2175FD300028CD80 /* BSListViewModel.swift in Sources */,
 				7FF71DB5217D7B8E0074E6FF /* OutputViewModel.swift in Sources */,
+				7F7362E421DF7409006B1A3E /* MarginLabel.swift in Sources */,
 				7FF71DB7217DAEE90074E6FF /* BSRefreshable.swift in Sources */,
 				7F80FDEE217987C3000A5E50 /* RecommendListViewModel.swift in Sources */,
 				7FF4A9C321AEA96C00EA4ED8 /* MeCollectionReusableView.swift in Sources */,
 				7FF941AC217EC5EC00978181 /* BSComposeTypeButton.swift in Sources */,
 				7F035D842174A20D004D7D22 /* ViewController.swift in Sources */,
 				7FF3E3C921A41E80003FF396 /* BSLoginViewController.swift in Sources */,
+				7F7362E821DF7409006B1A3E /* PerformanceView.swift in Sources */,
 				7F9AAA92218AE32500AD11F7 /* ListDetailViewController.swift in Sources */,
 				7FF5696A21AF8575008729C4 /* BSBaseCollectionViewCell.swift in Sources */,
 				7FF4A9BD21AE8F3B00EA4ED8 /* BSBouncesContentView.swift in Sources */,
@@ -726,24 +767,29 @@
 				7FF85BE32175D0CD0028CD80 /* BSProgressHUD.swift in Sources */,
 				7FF85BE72175D8A50028CD80 /* EssenceViewModel.swift in Sources */,
 				7F035DB82174A693004D7D22 /* BSMarco.swift in Sources */,
+				7F5F3FF321E885F30005FDEF /* BSSettingViewController.swift in Sources */,
 				7F80FE042179DC72000A5E50 /* ListFooterSctionView.swift in Sources */,
 				7F035DCD2174AF9B004D7D22 /* CommunityViewController.swift in Sources */,
 				7F81C50021A5489100814DEB /* RegisterViewModel.swift in Sources */,
 				7F9AAA94218AE4D500AD11F7 /* ListDetailHeaderView.swift in Sources */,
 				7FF4A9BB21AE8D8900EA4ED8 /* BSBasicContentView.swift in Sources */,
+				7F7362E521DF7409006B1A3E /* PerformanceMonitor.swift in Sources */,
 				7FF5697021AFCAEC008729C4 /* BSComposeTypeView.swift in Sources */,
 				7F035DC92174AF62004D7D22 /* EssenceViewController.swift in Sources */,
 				7FF85BE12175CF6B0028CD80 /* BSEntity.swift in Sources */,
+				7F7362E721DF7409006B1A3E /* PerformanceСalculator.swift in Sources */,
 				7FF71DB1217D7AD60074E6FF /* OutputListViewController.swift in Sources */,
 				7F92E58621C3ADB700B15170 /* PlayerView.swift in Sources */,
 				7FF5696E21AF8F63008729C4 /* MeEntity.swift in Sources */,
 				7FF85BE52175D1220028CD80 /* ObservableType+HandyJSON.swift in Sources */,
+				7FA2808821D35E3100F9755E /* UIView+BSExtension.swift in Sources */,
 				7F92E58421C3ADB700B15170 /* TestController.swift in Sources */,
 				7F80FE022179CB2F000A5E50 /* RecommendListCell.swift in Sources */,
 				7F035DC22174A77A004D7D22 /* String+BSExtension.swift in Sources */,
 				7FF71DBD217DD6DF0074E6FF /* BSBaseTableViewController.swift in Sources */,
 				7F80FDEC217987A6000A5E50 /* RecommendListViewController.swift in Sources */,
 				7F92E58321C3ADB700B15170 /* Header.swift in Sources */,
+				7F7362E621DF7409006B1A3E /* Protocols.swift in Sources */,
 				7F92E58521C3ADB700B15170 /* PlayerManager.swift in Sources */,
 				7FF5697321AFEFC0008729C4 /* UINavigationController+BSTransitions.swift in Sources */,
 				7F035DC72174ABD6004D7D22 /* BSBaseTableViewCell.swift in Sources */,

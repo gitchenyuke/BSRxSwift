@@ -54,8 +54,16 @@ extension BSLoginViewModel:BSViewModelType{
         let loginSucceed = input.loginTips.withLatestFrom(mobileAndPwd).flatMapLatest { (mobil,pwd) -> Driver<Bool> in
             let userManger = UserCenterManger.sharedInstance
             
+            /// 如果不符合则return 就用guard
+            guard userManger.user != nil else{
+                BSProgressHUD.showError("账号不存在")
+                return Driver.just(false)
+            }
+            
             if mobil == userManger.user.mobile && pwd == userManger.user.pwd {
                 BSProgressHUD.showSuccess("登录成功")
+                userManger.user.login = true
+                userManger.saveToCache()
                 return Driver.just(true)
             }else{
                 BSProgressHUD.showError("手机或密码错误")

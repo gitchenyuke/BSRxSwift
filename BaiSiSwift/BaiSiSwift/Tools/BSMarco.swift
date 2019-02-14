@@ -60,6 +60,9 @@ let XHLinkCollectionViewCellW:CGFloat        = (kScreenWidth-40 - 70)/3
 let DefaultGraph:String                      = "defaultGraph_2" //图片默认占位图
 let MeCellWithd:CGFloat                      = (kScreenWidth - 130) / 5.0
 
+/// 缓存单例
+let userManger:UserCenterManger              = UserCenterManger.sharedInstance
+
 
 // View 圆角和加边框
 func ViewBorderRadius(view:UIView ,Radius:CGFloat ,Width:CGFloat,Color:UIColor) {
